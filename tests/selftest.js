@@ -13,6 +13,7 @@ const ROOT = path.join(__dirname, '..');
 const FILES = [
   'js/bank/probability.js', 'js/bank/statistics.js', 'js/bank/brainteasers.js',
   'js/bank/marketmaking.js', 'js/bank/programming.js',
+  'js/bank/discretemath.js', 'js/bank/datawrangling.js',
   'js/generators.js', 'js/firms.js', 'js/interviews.js', 'js/stats.js', 'js/engine.js'
 ];
 

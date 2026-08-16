@@ -60,7 +60,7 @@ negative expected value — the tool tells you this on-screen and scores it acco
 
 ## Question bank
 
-172 curated questions with full worked solutions, plus unlimited procedurally generated
+201 curated questions with full worked solutions, plus unlimited procedurally generated
 arithmetic and sequence questions.
 
 | Category | Count | Covers |
@@ -70,8 +70,8 @@ arithmetic and sequence questions.
 | Brainteasers | 31 | Logic puzzles, information-theoretic weighing, hats, game theory, Fermi estimation, number theory |
 | Options & Derivatives | 15 | Put-call parity, Greeks, Black-Scholes approximations, vol surface, delta hedging, structures |
 | Market Making | 12 | Fair value and quoting, adverse selection, sizing, Kelly, arbitrage |
-| Programming | 12 | Algorithms, streaming data structures, order books, numerical methods, low-latency systems, pandas |
-| Mathematics | 11 | Combinatorics, linear algebra, PCA, calculus, stochastic calculus |
+| Programming | 22 | Algorithms, streaming data structures, order books, numerical methods, low-latency systems, and data wrangling (as-of joins, resampling, survivorship bias, corporate actions) |
+| Mathematics | 30 | Combinatorics, counting, number theory, graphs, recursion, linear algebra, PCA, calculus, stochastic calculus |
 
 Each question carries a category, sub-topic, difficulty, target solve time, firm
 attribution, and a worked solution that explains the *method* and the common trap — not
@@ -114,7 +114,7 @@ node tests/selftest.js    # bank integrity, parser, generators, blueprints, scor
 node tests/uitest.js      # browser smoke test (needs playwright)
 ```
 
-`selftest.js` runs ~2,900 assertions with no dependencies: it validates every question's
+`selftest.js` runs ~3,200 assertions with no dependencies: it validates every question's
 schema, checks that every generated question is gradable, builds and scores every firm
 blueprint, verifies negative marking arithmetic, and asserts the market-making game stays
 winnable at sensible widths and unprofitable at bad ones.
