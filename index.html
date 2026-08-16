@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quant Practice — OA &amp; Interview Simulator</title>
+<link rel="stylesheet" href="css/styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
+</head>
+<body>
+
+<div class="shell">
+  <nav class="sidebar">
+    <div class="brand">Quant<span>Practice</span>
+      <small>OA &amp; Interview Simulator</small>
+    </div>
+    <div class="nav">
+      <button data-route="home"       onclick="QPgo('home')"><span class="ico">◈</span>Dashboard</button>
+      <button data-route="firms"      onclick="QPgo('firms')"><span class="ico">📋</span>Firm OAs</button>
+      <button data-route="interviews" onclick="QPgo('interviews')"><span class="ico">🎙</span>Interviews</button>
+      <button data-route="mmgame"     onclick="QPgo('mmgame')"><span class="ico">📊</span>Market Making</button>
+      <button data-route="speed"      onclick="QPgo('speed')"><span class="ico">⚡</span>Speed Maths</button>
+      <button data-route="drill"      onclick="QPgo('drill')"><span class="ico">🎯</span>Topic Drill</button>
+      <button data-route="review"     onclick="QPgo('review')"><span class="ico">↻</span>Review</button>
+      <button data-route="stats"      onclick="QPgo('stats')"><span class="ico">▤</span>Analytics</button>
+      <button data-route="about"      onclick="QPgo('about')"><span class="ico">?</span>About</button>
+    </div>
+    <div class="side-foot">
+      Progress is stored locally in this browser.
+    </div>
+  </nav>
+
+  <main class="main"><div id="view"></div></main>
+</div>
+
+<!-- question bank -->
+<script src="js/bank/probability.js"></script>
+<script src="js/bank/statistics.js"></script>
+<script src="js/bank/brainteasers.js"></script>
+<script src="js/bank/marketmaking.js"></script>
+<script src="js/bank/programming.js"></script>
+<!-- engine -->
+<script src="js/generators.js"></script>
+<script src="js/firms.js"></script>
+<script src="js/interviews.js"></script>
+<script src="js/stats.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
