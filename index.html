@@ -45,6 +45,19 @@
 <script src="js/interviews.js"></script>
 <script src="js/stats.js"></script>
 <script src="js/engine.js"></script>
-<script src="js/app.js"></script>
+<!-- Optional local-only imported bank (gitignored). Loaded if present,
+     silently skipped if not, then the app boots either way. -->
+<script>
+(function () {
+  function load(src, done) {
+    var s = document.createElement('script');
+    s.src = src;
+    s.onload = done;
+    s.onerror = done;          // absent file is expected, not an error
+    document.head.appendChild(s);
+  }
+  load('js/bank/imported.js', function () { load('js/app.js'); });
+})();
+</script>
 </body>
 </html>

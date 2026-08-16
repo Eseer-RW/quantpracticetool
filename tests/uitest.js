@@ -24,7 +24,13 @@ function ok(cond, msg) {
   const page = await browser.newPage();
 
   const errors = [];
-  page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
+  /* js/bank/imported.js is an optional, gitignored local file. Its absence is
+   * the normal case and the loader handles it, but the browser still logs a
+   * failed resource fetch — that one message is expected, nothing else is. */
+  const benign = /ERR_FILE_NOT_FOUND|Failed to load resource/;
+  page.on('console', m => {
+    if (m.type() === 'error' && !benign.test(m.text())) errors.push(m.text());
+  });
   page.on('pageerror', e => errors.push('pageerror: ' + e.message));
 
   await page.goto(URL);

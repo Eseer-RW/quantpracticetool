@@ -33,6 +33,14 @@ sandbox.window = sandbox;
 sandbox.globalThis = sandbox;
 vm.createContext(sandbox);
 
+/* The local-only imported bank is optional and gitignored. Validate it too when
+ * it exists, so transcribed questions get the same schema checks. */
+const IMPORTED = 'js/bank/imported.js';
+if (fs.existsSync(path.join(ROOT, IMPORTED))) {
+  FILES.splice(FILES.indexOf('js/bank/programming.js') + 1, 0, IMPORTED);
+  console.log(`\x1b[36mincluding ${IMPORTED}\x1b[0m`);
+}
+
 for (const f of FILES) {
   vm.runInContext(fs.readFileSync(path.join(ROOT, f), 'utf8'), sandbox, { filename: f });
 }
